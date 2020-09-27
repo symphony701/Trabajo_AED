@@ -15,6 +15,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    //void ChallangeTheme();
+    //void Login();
 private:
     Ui::MainWindow *ui;
 };

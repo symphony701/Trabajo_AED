@@ -16,6 +16,7 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    form2.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
