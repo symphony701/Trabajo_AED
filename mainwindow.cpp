@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <fstream>
 #include <string>
+
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -24,10 +26,14 @@ void MainWindow::on_pushButton_clicked()
     arch.read(f,sizeof(char)*5);
     arch.close();
     QString::fromStdString(f);
+    printf(f);
     QString id=ui->lineID->text();
     QString pass = ui->linePass->text();
     if(id=="admin"&&pass=="admin"){
-        this->close();
+
+
+
+
     }
 
 }
