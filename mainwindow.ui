@@ -72,7 +72,7 @@ QWidget{
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineID">
      <property name="geometry">
       <rect>
        <x>490</x>
@@ -91,7 +91,7 @@ QWidget{
       <string>Email</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="linePass">
      <property name="geometry">
       <rect>
        <x>490</x>

@@ -18,6 +18,9 @@ public:
 public slots:
     //void ChallangeTheme();
     //void Login();
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
