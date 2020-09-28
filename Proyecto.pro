@@ -9,15 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    formerror.cpp \
     formsocial.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Persona.h \
+    User.h \
+    formerror.h \
     formsocial.h \
     mainwindow.h
 
 FORMS += \
+    formerror.ui \
     formsocial.ui \
     mainwindow.ui
 
@@ -30,7 +35,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Image/logo
+    Image/logo \
+    yasashii.bin
 
 RESOURCES += \
     imagen.qrc

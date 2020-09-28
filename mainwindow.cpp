@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <fstream>
-#include <string>
+#include <QFile>
+#include <QTextStream>
 #include "formsocial.h"
-
+#include "formerror.h"
 
 using namespace std;
 
@@ -22,24 +22,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    ifstream arch("yasashii.bin");
-    char f[5]={0};
-    arch.read(f,sizeof(char)*5);
-    arch.close();
-    QString::fromStdString(f);
-    printf(f);
-    QString id=ui->lineID->text();
-    QString pass = ui->linePass->text();
-    if(id=="admin"&&pass=="admin"){
-        //aqui inicializamos el form luego de loguearse
-        formSocial* principalSocial= new formSocial();
-        principalSocial->show();
+        QString usuario;
+        QTextStream log;
+        QFile gin;
+        gin.setFileName(":/yasashii.bin");
+        gin.open(QIODevice::Text | QIODevice::ReadOnly);
+        log.setDevice(&gin);
+        usuario= gin.readAll();
+        gin.close();
+        QString id=ui->lineID->text();
+        QString pass = ui->linePass->text();
+        if(id==usuario&&pass==usuario){
+            //aqui inicializamos el form luego de loguearse
+            formSocial* principalSocial= new formSocial();
+            principalSocial->showMaximized();
+        }else{
+            FormError* formerror= new FormError();
+            formerror->show();
+        }
 
-
-
-
-
-
-    }
 
 }
