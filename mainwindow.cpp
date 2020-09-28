@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <fstream>
 #include <string>
+#include "formsocial.h"
 
 
 using namespace std;
@@ -30,9 +31,9 @@ void MainWindow::on_pushButton_clicked()
     QString id=ui->lineID->text();
     QString pass = ui->linePass->text();
     if(id=="admin"&&pass=="admin"){
-
-
-
+        //aqui inicializamos el form luego de loguearse
+        formSocial* principalSocial= new formSocial();
+        principalSocial->show();
 
     }
 
