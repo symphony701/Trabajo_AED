@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>Image/loguito.png</file>
+        <file>Image/Instagram-Logo.png</file>
+        <file>Image/1txzdqklsli51.jpg</file>
+        <file>Image/05c94496becf4b8ee8b90603be0632cd.png</file>
+        <file>Image/kanojo-okarishimasu-sad.png</file>
+        <file>Image/tumblr_1ad8e3bc4cc12281bd6d063752298d52_14ac273d_640.png</file>
+        <file>Image/chizuru.PNG</file>
+        <file>Image/ruka programadora.jpg</file>
     </qresource>
 </RCC>

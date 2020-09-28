@@ -57,6 +57,9 @@ QWidget{
        <height>16777215</height>
       </size>
      </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
      <property name="styleSheet">
       <string notr="true">QGroupBox{
 	Background-color:Black;
@@ -66,7 +69,7 @@ QWidget{
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>Image/loguito.png</pixmap>
+      <pixmap resource="imagen.qrc">:/Image/loguito.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -161,6 +164,8 @@ QWidget{
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="imagen.qrc"/>
+ </resources>
  <connections/>
 </ui>
