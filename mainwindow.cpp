@@ -34,7 +34,7 @@ void MainWindow::on_pushButton_clicked()
         QString pass = ui->linePass->text();
         if(id==usuario&&pass==usuario){
             //aqui inicializamos el form luego de loguearse
-            formSocial* principalSocial= new formSocial();
+            formSocial* principalSocial= new formSocial(nullptr,id);
             principalSocial->showMaximized();
         }else{
             FormError* formerror= new FormError();
