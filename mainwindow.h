@@ -21,6 +21,10 @@ public slots:
 private slots:
     void on_pushButton_clicked();
 
+    void on_Register_clicked();
+
+    void on_login_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

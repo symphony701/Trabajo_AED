@@ -8,7 +8,7 @@ formSocial::formSocial(QWidget *parent,QString IDUser) :
     usuario= new User(IDUser);
 
     ui->setupUi(this);
-    ui->nombreUsuario->setText(IDUser);
+ //   ui->nombreUsuario->setText(IDUser);
 
 
 }

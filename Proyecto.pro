@@ -39,4 +39,5 @@ DISTFILES += \
     yasashii.bin
 
 RESOURCES += \
+    archivitosxd.qrc \
     imagen.qrc
