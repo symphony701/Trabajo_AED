@@ -35,6 +35,11 @@ void MainWindow::on_pushButton_clicked()
         formSocial* principalSocial= new formSocial();
         principalSocial->show();
 
+
+
+
+
+
     }
 
 }
