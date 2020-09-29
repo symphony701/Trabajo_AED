@@ -56,32 +56,22 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_Register_clicked()
 {
-    /*QFile usuarios("c:/Users/Symphony/Documents/GitHub/Trabajo_AED/usuarios.bin");
+   QFile usuarios("c:\\usuarios.bin");
+   // usuarios.setFieName(":/usuarios.bin");
     if(!usuarios.open(QIODevice::WriteOnly)){
         qDebug()<<"Error: "<<usuarios.errorString();
     }
+ //   usuarios.open(QIODevice::Text  | QIODevice::WriteOnly);
    // usuarios.open(QIODevice::WriteOnly);
     QDataStream usua(&usuarios);
     //usua.setVersion(QDataStream::Q)
-
-    usua.setVersion(QDataStream::Qt_DefaultCompiledVersion);
-
-    usuarios.flush();
-    usuarios.close();
-    */
     usuariosxd users[1];
+    usua.setVersion(QDataStream::Qt_DefaultCompiledVersion);
     users[0].Id="Ruka_Sarahina";
     users[0].Password="hazmecasokazuya";
-
-
-    QFile log(":/usuarios.bin");
-
-    if(log.open(QIODevice::WriteOnly)){
-        QTextStream escribir(&log);
-        escribir<<users[0].Id<<users[0].Password;
-        log.close();
-    }
-
+    usua<<users[0];
+    usuarios.flush();
+    usuarios.close();
 
 }
 
