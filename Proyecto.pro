@@ -19,6 +19,7 @@ HEADERS += \
     User.h \
     formerror.h \
     formsocial.h \
+    logeador.h \
     mainwindow.h
 
 FORMS += \
@@ -36,6 +37,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Image/logo \
+    usuarios.bin \
     yasashii.bin
 
 RESOURCES += \

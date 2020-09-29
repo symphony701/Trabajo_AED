@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "logeador.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +20,6 @@ public slots:
     //void ChallangeTheme();
     //void Login();
 private slots:
-    void on_pushButton_clicked();
 
     void on_Register_clicked();
 
@@ -27,5 +27,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    login *log;
 };
 #endif // MAINWINDOW_H
