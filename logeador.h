@@ -25,12 +25,8 @@ public:
         bool val=false;
         string us, pass;
         ifstream usuario("usuarios.bin");
-
         while(getline(usuario,us,',')){
-             qDebug()<<"entro al while";
             getline(usuario,pass);
-            std::cout<<us;
-           qDebug()<<us.c_str()<<pass.c_str();
             if((us==ID.toStdString())&&(pass==Pass.toStdString())){
                 val=true;
 

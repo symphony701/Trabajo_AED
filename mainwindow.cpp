@@ -11,13 +11,11 @@
 #include <iostream>
 #include <cstring>
 #include "logeador.h"
+#include <QScrollBar>
 
 using namespace std;
 
-struct usuariosxd{
-    QString Id;
-    QString Password;
-};
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -42,24 +40,6 @@ void MainWindow::on_Register_clicked()
 
 void MainWindow::on_login_clicked()
 {
-
-   /* string us, pass;
-    ifstream usuario("usuarios.bin");
-
-    while(getline(usuario,us,',')){
-         qDebug()<<"entro al while";
-        getline(usuario,pass);
-        std::cout<<us;
-       qDebug()<<us.c_str()<<pass.c_str();
-        if((us==ui->lineID->text().toStdString())&&(pass==ui->linePass->text().toStdString())){
-           // val=true;
-
-            formSocial* principalSocial= new formSocial(nullptr,ui->lineID->text());
-            principalSocial->showMaximized();
-            break;
-        }
-    }*/
-
     if(log->logearUsuario(ui->lineID->text(),ui->linePass->text())){
         formSocial* principalSocial= new formSocial(nullptr,ui->lineID->text());
         principalSocial->showMaximized();

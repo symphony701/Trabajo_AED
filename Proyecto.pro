@@ -9,20 +9,25 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chat.cpp \
     formerror.cpp \
     formsocial.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Lista.h \
     Persona.h \
+    Pilas.h \
     User.h \
+    chat.h \
     formerror.h \
     formsocial.h \
     logeador.h \
     mainwindow.h
 
 FORMS += \
+    chat.ui \
     formerror.ui \
     formsocial.ui \
     mainwindow.ui
