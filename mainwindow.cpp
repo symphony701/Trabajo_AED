@@ -49,3 +49,21 @@ void MainWindow::on_login_clicked()
     }
 
 }
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    if(arg1==2){
+      //  ui->groupBox->setStyleSheet("Background-color:White;");
+        ui->lineID->setStyleSheet("Background-color:Black;");
+        ui->linePass->setStyleSheet("Background-color:Black;");
+        ui->lineID->setStyleSheet("Color:White;");
+        ui->linePass->setStyleSheet("Color:White;");
+    }else{//ui->groupBox->setStyleSheet("Background-color:Black;");
+        ui->lineID->setStyleSheet("Background-color:White;");
+        ui->linePass->setStyleSheet("Background-color:White;");
+        ui->lineID->setStyleSheet("Color:Black;");
+        ui->linePass->setStyleSheet("Color:Black;");
+    }
+
+    qDebug()<<arg1;
+}
