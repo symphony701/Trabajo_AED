@@ -25,7 +25,7 @@ private slots:
 private:
     Ui::Chat *ui;
     QString Receptor,IDUser;
-    Lista<QString>*lista;
+    //Lista<QString>*lista;
 };
 
 #endif // CHAT_H

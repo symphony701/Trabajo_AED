@@ -35,15 +35,11 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_Register_clicked()
-{
-    log->registrarUsuario(ui->lineID->text(),ui->linePass->text());
-
-}
-
 void MainWindow::on_login_clicked()
 {
-    if(log->logearUsuario(ui->lineID->text(),ui->linePass->text())){
+
+
+    if(log->validadorUsuario(ui->lineID->text().toStdString())){
         formSocial* principalSocial= new formSocial(nullptr,ui->lineID->text());
         principalSocial->showMaximized();
     }else{
@@ -51,11 +47,12 @@ void MainWindow::on_login_clicked()
         formerror->show();
     }
 
+
 }
 
 void MainWindow::on_checkBox_stateChanged(int arg1)
 {
-    if(arg1==2){
+  /*  if(arg1==2){
       //  ui->groupBox->setStyleSheet("Background-color:White;");
         ui->lineID->setStyleSheet("Background-color:Black;");
         ui->linePass->setStyleSheet("Background-color:Black;");
@@ -68,5 +65,5 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
         ui->linePass->setStyleSheet("Color:Black;");
     }
 
-    qDebug()<<arg1;
+    qDebug()<<arg1;*/
 }

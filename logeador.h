@@ -9,30 +9,58 @@
 #include <QDebug>
 #include <cstring>
 #include <QDebug>
+#include "Lista.h"
+#include "User.h"
+#include <math.h>
 using namespace std;
 class login{
+    Lista *arreglo;
 public:
-    login(){}
+    login(){
+        arreglo=new Lista[20];
+        hasheabilador(arreglo);
+
+
+    }
     ~login(){}
-    void registrarUsuario(QString ID,QString Pass){
-
-        ofstream registro("usuarios.bin",ios::app);
-        registro<<ID.toStdString()<<","<<Pass.toStdString()<<"\n";
-        registro.close();
-
+    int hash2(string nick){
+      int cont=0;
+      int potencia= nick.length();
+      for(auto letra:nick){
+       cont=cont+((letra-96)*(int)pow(27, (float)potencia));
+       --potencia;
+      }
+      return cont;
     }
-    bool logearUsuario(QString ID,QString Pass){
-        bool val=false;
-        string us, pass;
-        ifstream usuario("usuarios.bin");
-        while(getline(usuario,us,',')){
-            getline(usuario,pass);
-            if((us==ID.toStdString())&&(pass==Pass.toStdString())){
-                val=true;
 
-                break;
-            }
+    int hash3(string nick){
+      return hash2(nick) % nick.length();
+    }
+
+
+      void hasheabilador(Lista arreglo[]){
+      string nick,mail,fecha;
+      string numero,teki;
+       ifstream dataUser("users.csv");
+        while(getline(dataUser,teki,',')){
+            getline(dataUser,numero,',');
+            getline(dataUser,mail,',');
+            getline(dataUser,nick,',');
+            getline(dataUser,fecha);
+
+            nick.erase(nick.begin());
+            nick.erase(nick.length()-1);
+
+            arreglo[hash3(nick)].atarashii(new User(nick,mail,atoi(numero.c_str()),fecha));
+
+
         }
-        return val;
+
     }
+      bool validadorUsuario(string usuario){
+          int posicion = hash3(usuario);
+          if(arreglo[posicion].kenshou(usuario)){
+              return true;
+          }else{return false;}
+      }
 };

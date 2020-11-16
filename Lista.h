@@ -9,31 +9,32 @@
 #include <QDebug>
 #include <cstring>
 #include <QDebug>
-
+#include "User.h"
 using namespace std;
 
 struct Nodo{
-    QString mensaje;
-    QString emisor;
+    User *Persona;
     Nodo * siguiente;
     int posicion;
+public:
+    Nodo(){};
 };
 
 
-template<class T>
+
 class Lista {
+
 private:
     Nodo*lista;
-    T Receptor;
+
 public:
-    Lista(T Receptor){
-        this->Receptor=Receptor;
+    Lista(){
+
         lista=NULL;
     }
-    void atarashii(T mensaje,T emisor){
+    void atarashii(User* element){
         Nodo *nuevo_nodo=new Nodo();
-        nuevo_nodo->mensaje= mensaje;
-        nuevo_nodo->emisor=emisor;
+        nuevo_nodo->Persona=element;
         nuevo_nodo->siguiente=NULL;
         Nodo*aux = new Nodo();
        if(lista==NULL){
@@ -47,16 +48,31 @@ public:
        }
 
     }
-    T miru(){
-        T chat="";
+    string miru(){
+        string chat="";
         Nodo *actual=new Nodo();
         actual=lista;
         while (actual!=NULL) {
-            chat=chat+actual->emisor+": "+actual->mensaje+"\n";
+            chat=chat+actual->Persona->getNick()+" "+"\n";
             actual=actual->siguiente;
         }
         return chat;
     }
+
+    bool kenshou(string form){
+        Nodo *actual=new Nodo();
+        actual=lista;
+        while (actual!=NULL) {
+            if(actual->Persona->getNick()==form){
+                return true;
+                break;
+            }
+
+        }
+        return false;
+
+    }
+
     void furui(){
         Nodo * ulti = new Nodo();
         Nodo *penulti=new Nodo();
@@ -75,25 +91,6 @@ public:
                 delete ulti;
             }
         }
-
-    }
-
-    void chatAnterior(T Receptor){
-        string emisor, mensaje;
-        string nombreArchivo=Receptor.toStdString()+".bin";
-        ifstream archivo(nombreArchivo);
-        while (getline(archivo,emisor,',')) {
-            getline(archivo,mensaje);
-            atarashii(QString::fromLocal8Bit(mensaje.c_str()),QString::fromLocal8Bit(emisor.c_str()));
-        }
-
-    }
-
-    void registrarChat(T emisor,T mensa){
-        string nombreArchivo=Receptor.toStdString();
-        ofstream registro(nombreArchivo+".bin",ios::app);
-        registro<<emisor.toStdString()<<","<<mensa.toStdString()<<"\n";
-        registro.close();
 
     }
 

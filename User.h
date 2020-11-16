@@ -1,20 +1,24 @@
 #pragma once
 
 #include <QObject>
-
+#include <string>
+using namespace std;
 class User{
-    QString Nombre;
-    int cantidadSeguidores;
-    int cantidadSeguidos;
-
-
+private:
+    string nick;
+    string mail;
+    int nro;
+    string fecha;
 public:
-    User(QString Nombre){this->Nombre=Nombre;}
-    ~User(){}
-    QString getNombre(){return Nombre;}
-    int getCantidadSeguidores(){return cantidadSeguidores;}
-    int getCantidadSeguidos(){return cantidadSeguidos;}
-    void setNombre(QString Nombre){this->Nombre=Nombre;}
-    void setcantidadSeguidores(int cantidadSeguidores){this->cantidadSeguidores=cantidadSeguidores;}
-    void setCantidadSeguidos(int cantidadSeguidos){this->cantidadSeguidos=cantidadSeguidos;}
+    User(string nick,string mail,int nro,string fecha){
+        this->nick=nick;
+        this->mail=mail;
+        this->nro=nro;
+        this->fecha=fecha;
+    }
+    User(){}
+    string getNick(){return nick;}
+    string getMail(){return mail;}
+    int getNro(){return nro;}
+    string getFecha(){return fecha;}
 };
