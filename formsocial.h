@@ -27,6 +27,8 @@ private slots:
 
     void on_cambiarEstado_clicked();
 
+    void on_pushButton_7_clicked();
+
 private:
     Ui::formSocial *ui;
     User*usuario;

@@ -13,7 +13,8 @@ SOURCES += \
     formerror.cpp \
     formsocial.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    perfile.cpp
 
 HEADERS += \
     Lista.h \
@@ -24,13 +25,15 @@ HEADERS += \
     formerror.h \
     formsocial.h \
     logeador.h \
-    mainwindow.h
+    mainwindow.h \
+    perfile.h
 
 FORMS += \
     chat.ui \
     formerror.ui \
     formsocial.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    perfile.ui
 
 TRANSLATIONS += \
     Proyecto_es_PE.ts

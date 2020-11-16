@@ -24,6 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     log=new login();
+  /*  QPushButton *button = new QPushButton(this);
+       button->move(100, 100);
+        button->show();*/
 }
 
 MainWindow::~MainWindow()

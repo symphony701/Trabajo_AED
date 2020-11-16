@@ -7,6 +7,7 @@
 #include "Pilas.h"
 #include <QDate>
 #include <QDateTime>
+#include "perfile.h"
 
 formSocial::formSocial(QWidget *parent,QString IDUser) :
     QWidget(parent),
@@ -21,7 +22,7 @@ formSocial::formSocial(QWidget *parent,QString IDUser) :
     areaPubli = formSocial::findChild<QScrollArea*>("areaPublicaciones");
     pila = new Pila<QString>();
     pila->postAnterior();
-    ui->labelPublis->setText(pila->miru());
+    //ui->labelPublis->setText(pila->miru());
 
 
 
@@ -58,10 +59,16 @@ void formSocial::on_chatChizuru_clicked()
 
 void formSocial::on_cambiarEstado_clicked()
 {
-    QString fecha=QTime::currentTime().toString()+"/"+QDate::currentDate().toString();
+   /* QString fecha=QTime::currentTime().toString()+"/"+QDate::currentDate().toString();
     pila->atarashii(ui->lineEdit->text(),IDUser,fecha);
     ui->labelPublis->setText(pila->miru());
     pila->registrarPost(IDUser,ui->lineEdit->text(),fecha);
-    ui->lineEdit->setText("");
+    ui->lineEdit->setText("");*/
 
+}
+
+void formSocial::on_pushButton_7_clicked()
+{
+    Perfile* person= new Perfile(nullptr);
+    person->show();
 }
