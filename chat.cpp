@@ -4,9 +4,9 @@
 #include <QDebug>
 #include <QtDebug>
 
+template <class LISTA>
 
-
-Chat::Chat(QWidget *parent,QString IDUser,QString Receptor) :
+Chat::Chat(QWidget *parent,QString IDUser,QString Receptor,LISTA lista) :
     QWidget(parent),
     ui(new Ui::Chat)
 {
@@ -28,7 +28,7 @@ Chat::~Chat()
     delete ui;
 }
 
-void Chat::on_enviarButton_clicked()
+void Chat::on_enviarButton_clicked(LISTA lista)
 {
     lista->atarashii(ui->lineEdit->text(),IDUser);
     ui->label->setText(lista->miru());
@@ -37,7 +37,7 @@ void Chat::on_enviarButton_clicked()
 
 }
 
-void Chat::on_eliminar_clicked()
+void Chat::on_eliminar_clicked(LISTA lista)
 {
     lista->furui();
     ui->label->setText(lista->miru());
