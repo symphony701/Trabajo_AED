@@ -5,7 +5,6 @@
 #include <QtDebug>
 
 template <class LISTA>
-
 Chat::Chat(QWidget *parent,QString IDUser,QString Receptor,LISTA lista) :
     QWidget(parent),
     ui(new Ui::Chat)

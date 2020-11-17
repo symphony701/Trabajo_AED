@@ -41,17 +41,19 @@ public:
       void hasheabilador(Lista arreglo[]){
       string nick,mail,fecha;
       string numero,teki;
-       ifstream dataUser("users.csv");
+       string prueba="Probando";
+      ifstream dataUser("users.txt");
         while(getline(dataUser,teki,',')){
             getline(dataUser,numero,',');
             getline(dataUser,mail,',');
             getline(dataUser,nick,',');
             getline(dataUser,fecha);
-
             nick.erase(nick.begin());
             nick.erase(nick.length()-1);
-
+            nick.erase(nick.begin());
+            nick.erase(nick.length()-1);
             arreglo[hash3(nick)].atarashii(new User(nick,mail,atoi(numero.c_str()),fecha));
+
 
 
         }

@@ -62,14 +62,16 @@ public:
     bool kenshou(string form){
         Nodo *actual=new Nodo();
         actual=lista;
+        bool val=false;
         while (actual!=NULL) {
             if(actual->Persona->getNick()==form){
-                return true;
-                break;
+                val=true;
             }
+            qDebug() << QString::fromStdString(actual->Persona->getNick());
+            actual=actual->siguiente;
 
         }
-        return false;
+          return val;
 
     }
 

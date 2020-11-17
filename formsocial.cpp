@@ -13,7 +13,7 @@ formSocial::formSocial(QWidget *parent,QString IDUser) :
     QWidget(parent),
     ui(new Ui::formSocial)
 {
-    usuario= new User(IDUser);
+    usuario= new User();
 
     ui->setupUi(this);
     this->IDUser = IDUser;
@@ -32,7 +32,7 @@ formSocial::~formSocial()
 {
     delete ui;
 }
-
+/*
 void formSocial::on_pushButton_8_clicked()
 {
     Chat* chatxd= new Chat(nullptr,IDUser,"Ruka");
@@ -56,7 +56,7 @@ void formSocial::on_chatChizuru_clicked()
     Chat* chatxd= new Chat(nullptr,IDUser,"Chizuru");
     chatxd->show();
 }
-
+*/
 void formSocial::on_cambiarEstado_clicked()
 {
    /* QString fecha=QTime::currentTime().toString()+"/"+QDate::currentDate().toString();

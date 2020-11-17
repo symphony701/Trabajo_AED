@@ -21,7 +21,7 @@ public slots:
     //void Login();
 private slots:
 
-    void on_Register_clicked();
+
 
     void on_login_clicked();
 
